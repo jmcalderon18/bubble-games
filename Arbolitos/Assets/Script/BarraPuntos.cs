@@ -13,9 +13,6 @@ public class BarraPuntos : MonoBehaviour {
 
 	public static ActivarImagenTemporal activeImagTemporalUnique; //Cambia imagen de la UI
 
-	//PARTE NUEVA TEMPORAL
-	public static int iSuperNice = 0;
-
 
 	/** 
      * Metodo Start sobrescrito de la clase <code>MonoBehaviour</code>.<P>
