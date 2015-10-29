@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class BarraPuntos : MonoBehaviour {
 
 	public static int iSize = 793; //Tamano de la imagen barra
-	private static float spaceForWater = 0; //Espacio que aumenta el agua en una respuesta correcta
+	private static float fSpaceForWater = 0; //Espacio que aumenta el agua en una respuesta correcta
 	private static float initialPosition; //Posicion inical de la imagen
 	public static int iTotalAnswers = 4; //Numero total de preguntas
 	public  static int iCorrectAnswers = 0; //Respuestas correctas
@@ -21,7 +21,7 @@ public class BarraPuntos : MonoBehaviour {
      */
 	void Start () {
 		imaBarra = this.GetComponentInChildren<Image>();
-		spaceForWater = iSize / iTotalAnswers;
+		fSpaceForWater = iSize / iTotalAnswers;
 		initialPosition =-373;
 
 		iCorrectAnswers = 0;
@@ -36,7 +36,7 @@ public class BarraPuntos : MonoBehaviour {
 	public static void goodAnswer()
 	{
 		iCorrectAnswers++;
-		imaBarra.transform.position =  new Vector3(initialPosition + (iCorrectAnswers*spaceForWater),imaBarra.rectTransform.position.y,0);
+		imaBarra.transform.position =  new Vector3(initialPosition + (iCorrectAnswers*fSpaceForWater),imaBarra.rectTransform.position.y,0);
 		if(iCorrectAnswers>=iTotalAnswers) 
 		{
 			activeImagTemporalUnique.changeImageWin();
@@ -54,8 +54,8 @@ public class BarraPuntos : MonoBehaviour {
 	public static void wrongAnswer()
 	{
 		iTotalAnswers++;
-		spaceForWater = iSize / iTotalAnswers;
-		imaBarra.transform.position =  new Vector3(initialPosition + (iCorrectAnswers*spaceForWater),imaBarra.rectTransform.position.y,0);
+		fSpaceForWater = iSize / iTotalAnswers;
+		imaBarra.transform.position =  new Vector3(initialPosition + (iCorrectAnswers*fSpaceForWater),imaBarra.rectTransform.position.y,0);
 
 	}
 }
